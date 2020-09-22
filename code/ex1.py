@@ -15,4 +15,9 @@ df =  spark.createDataFrame(
   ("id", "name"))
 df.show()
 
+jdbcDF2 = spark.read.jdbc(\
+    "jdbc:postgresql:192.168.86.41",\
+    "public.sp500_csv",\
+    properties={"user": "postgres", "password": "Pass2020!"})
 
+jdbcDF2.show()
